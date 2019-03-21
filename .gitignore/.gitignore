@@ -1,0 +1,552 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+#define True 1
+#define False 0
+
+bool ok_chscrb = False;
+
+// 1. La función NumCharToInt es una función que debe convertir un número escrito en letras (cadena de caracteres) 
+// en un número de tipo entero, usted debe agregar las líneas de código necesarias para implementar dicha funcionalidad.
+// Se debe garantizar que se convierten números enteros positivos y negativos.
+// Se debe garantizar que la función no intente convertir un número que sobrepasa la capacidad del tipo de dato int.
+// Utilice el tipo de dato "string" en caso de necesitar alguna variable para almacenar cadenas de caracteres.
+// Utilice al final una sentencia cout<< <<endl; para imprimir en pantalla el número transformado a entero
+// Dato1: La representación en caracter (ASCII) de un número natural (0 al 9) es igual al número + 48 (o bien 0x30 en hexa)
+//        Ejemplo: '9' = 9 + 48 = 0x09 + 0x30
+// Dato2: Para verificar la longitud de la cadena de caracteres que representa un número puede usar el operador size()
+//        Ejemplo: string numero = "123456" -> numero.size() da como resultado 6
+// Dato3: Solo puede utilizar declaración de variables, operadores de C++ y estructuras de control para codificar la solución.
+// Dato4: Recuerde que las cadenas de caracteres (strings) se comportan como arrays de tipo char, se puede utilizar el operador
+//        corchetes [] para acceder individualmente a las letras -> Ejemplo: string hh = "Hola"; hh[1] es la letra o
+
+void NumStringToInt(string numero)
+{
+	string num = "2147483647";
+	
+	
+	/* NO borre esta linea de codigo */
+	// num = "12345"; //Puede reescribir la variable num de esta manera para que haga pruebas de su codigo 
+	
+	//De aqui en adelante se debe implementar la lógica en código de C++
+	
+    int n = 0;
+    int m=0;
+   
+    unsigned long int num_r=0;
+    
+    n=num.size();
+    
+    m=(int const) n;
+    
+    
+    
+    if (m>11)
+    
+    {  cout<<"El numero supera el tamaño de 4 bytes"<<endl;
+    
+    }
+    
+    else
+    
+    {
+    
+    if(num[0]==45)
+    
+    {
+        switch(m) 
+        
+        {
+            case 2 :
+            
+            num_r=num[1]-48;
+            
+            cout<<"El numero es "<<"-"<<num_r<<endl;
+            
+            break;
+            
+            
+           case 3 :
+            
+            num_r=(num[1]-48)*10+(num[2]-48);
+            
+            cout<<"El numero es "<<"-"<<num_r<<endl;
+            
+            break;
+            
+            case 4 :
+            
+            num_r=(num[1]-48)*100+(num[2]-48)*10+(num[3]-48);
+            
+            cout<<"El numero es "<<"-"<<num_r<<endl;
+            
+            break;
+
+
+	    case 5 :
+            
+            num_r=(num[1]-48)*1000+(num[2]-48)*100+(num[3]-48)*10+(num[4]-48);
+            
+            cout<<"El numero es "<<"-"<<num_r<<endl;
+            
+            break;
+
+	    case 6 :
+            
+            num_r=(num[1]-48)*10000+(num[2]-48)*1000+(num[3]-48)*100+(num[4]-48)*10+(num[5]-48);
+            
+            cout<<"El numero es "<<"-"<<num_r<<endl;
+            
+            break;
+
+	    case 7 :
+            
+            num_r=(num[1]-48)*100000+(num[2]-48)*10000+(num[3]-48)*1000+(num[4]-48)*100+(num[5]-48)*10+(num[6]-48);
+            
+            cout<<"El numero es "<<"-"<<num_r<<endl;
+            
+            break;
+
+	    case 8 :
+            
+            num_r=(num[1]-48)*1000000+(num[2]-48)*100000+(num[3]-48)*10000+(num[4]-48)*1000+(num[5]-48)*100+(num[6]-48)*10+(num[7]-48);
+            
+            cout<<"El numero es "<<"-"<<num_r<<endl;
+            
+            break;
+
+case 9 :
+            
+            num_r=(num[1]-48)*10000000+(num[2]-48)*1000000+(num[3]-48)*100000+(num[4]-48)*10000+(num[5]-48)*1000+(num[6]-48)*100+(num[7]-48)*10+(num[8]-48);
+            
+            cout<<"El numero es "<<"-"<<num_r<<endl;
+            
+            break;
+
+case 10 :
+            
+            num_r=(num[1]-48)*100000000+(num[2]-48)*10000000+(num[3]-48)*1000000+(num[4]-48)*100000+(num[5]-48)*10000+(num[6]-48)*1000+(num[7]-48)*100+(num[8]-48)*10+(num[9]-48);
+            
+            cout<<"El numero es "<<"-"<<num_r<<endl;
+            
+            break;
+
+case 11 :
+            
+            num_r=(num[1]-48)*1000000000+(num[2]-48)*100000000+(num[3]-48)*10000000+(num[4]-48)*1000000+(num[5]-48)*100000+(num[6]-48)*10000+(num[7]-48)*1000+(num[8]-48)*100+(num[9]-48)*10+(num[10]-48);
+            
+            if (num_r>2147483648)
+         
+         {
+             
+             cout<<"El numero supera el tamaño de 4 Bytes"<<endl;
+             
+             
+         }
+         
+         else
+         
+         {
+            
+            cout<<"El numero es "<<"-"<<num_r<<endl;
+            
+            
+            
+         }
+
+
+          break;  
+            
+        }
+            
+         
+    
+            
+    }
+        
+        else  {
+            
+            
+            switch (m) {
+            
+            case 1 :
+            
+            num_r=num[0]-48;
+            
+            cout<<"El numero es "<<num_r<<endl;
+            
+            break;
+            
+            case 2:
+            
+            num_r=(num[0]-48)*10+(num[1]-48);
+            
+            cout<<"El numero es "<<num_r<<endl;
+            
+            break;
+            
+            case 3:
+            
+            num_r=(num[0]-48)*100+(num[1]-48)*10+(num[2]-48);
+            
+            cout<<"El numero es "<<num_r<<endl;
+            
+            break;
+            
+            case 4:
+            
+            num_r=(num[0]-48)*1000+(num[1]-48)*100+(num[2]-48)*10+(num[3]-48);
+            
+            cout<<"El numero es "<<num_r<<endl;
+            
+            break;
+            
+             case 5:
+            
+            num_r=(num[0]-48)*10000+(num[1]-48)*1000+(num[2]-48)*100+(num[3]-48)*10+(num[4]-48);
+            
+            cout<<"El numero es "<<num_r<<endl;
+            
+            break;
+            
+             case 6:
+            
+            num_r=(num[0]-48)*100000+(num[1]-48)*10000+(num[2]-48)*1000+(num[3]-48)*100+(num[4]-48)*10+(num[5]-48);
+            
+            cout<<"El numero es "<<num_r<<endl;
+            
+            break;
+            
+             case 7:
+            
+            num_r=(num[0]-48)*1000000+(num[1]-48)*100000+(num[2]-48)*10000+(num[3]-48)*1000+(num[4]-48)*100+(num[5]-48)*10+(num[6]-48);
+            
+            cout<<"El numero es "<<num_r<<endl;
+            
+            break;
+            
+            case 8:
+            
+            num_r=(num[0]-48)*10000000+(num[1]-48)*1000000+(num[2]-48)*100000+(num[3]-48)*10000+(num[4]-48)*1000+(num[5]-48)*100+(num[6]-48)*10+(num[7]-48);
+            
+            cout<<"El numero es "<<num_r<<endl;
+            
+            break;
+            
+            case 9:
+            
+            num_r=(num[0]-48)*100000000+(num[1]-48)*10000000+(num[2]-48)*1000000+(num[3]-48)*100000+(num[4]-48)*10000+(num[5]-48)*1000+(num[6]-48)*100+(num[7]-48)*10+(num[8]-48);
+            
+            cout<<"El numero es "<<num_r<<endl;
+            
+            break;
+            
+            case 10:
+            
+            num_r=(num[0]-48)*1000000000+(num[1]-48)*100000000+(num[2]-48)*10000000+(num[3]-48)*1000000+(num[4]-48)*100000+(num[5]-48)*10000+(num[6]-48)*1000+(num[7]-48)*100+(num[8]-48)*10+(num[9]-48);
+            
+             if (num_r>2147483647)
+         
+         {
+             
+             cout<<"El numero supera el tamaño de 4 Bytes"<<endl;
+             
+             
+         }
+         
+         else
+         
+         {
+            
+            cout<<"El numero es "<<num_r<<endl;
+            
+            
+            
+         }
+            
+            
+            
+            break;
+            
+            
+        
+        
+            }
+            
+            
+        }
+        
+        
+        
+    }
+            
+        
+            
+            
+    
+            
+           
+            
+        
+            
+            
+            
+            
+            
+            
+        
+        
+        
+        
+        
+    
+	
+	
+}
+
+// 2. La función CheckScrabble es una función que debe permitir descubrir si dos palabras están escritas con las mismas letras pero
+// en distinto orden, ejemplos: "#Colombia" y "Boci#loam", "Z4PotlaN3jo" y "Pozjotlan43". Usted debe codificar esta funcionalidad usando
+// operadores y estructuras de control de C++.
+// En caso de que las palabras cumplan con la caracteristica de estar escritas con las mismas letras (¡la misma cantidad de letras obviamente!)
+// se debe asignar el valor True a la variable ok_chscrb.
+// Las palabras pueden estar formadas indistintamente por letras, números y caracteres raros, tal como vio en los ejemplos.
+// Dato1: Lo primero que se debe verificar es si las palabras tienen el mismo número de letras, recuerde el operador size() del ejercicio anterior
+// Dato2: Preguntele al buen Google por la representación en ASCII de las letras del abecedario (mayusculas y minusculas)
+// Dato3: Puede utilizar directamente las variables palabra1 y palabra2 para implementar su codigo
+// Pista esencial: NO es necesario que compare letra por letra individualmente.
+//                 Reduzca el problema a un dominio común.
+
+void CheckScrabble (string &palabra1, string &palabra2)
+{
+	ok_chscrb = False; /*Por favor NO borre esta linea de codigo*/
+	
+	//De aqui en adelante se debe implementar la lógica en código de C++
+	
+	palabra1 ="Pepepls";
+	palabra2 ="PEPESLp";
+	
+	
+	
+	int t1,t2,temp=0;
+	 
+	t1=palabra1.size();
+	t2=palabra2.size();
+	
+		for (int p=0; p<=t1;p++)
+	
+	{
+	    if (palabra1[p]>=65&&palabra1[p]<=90)
+	    
+	    {
+	    
+	    palabra1[p]=palabra1[p] +32;
+	    
+	    
+	    }
+	       
+	}
+	
+	
+	for (int q=0; q<=t2; q++)
+	
+	
+	{
+	    if (palabra2[q]>=65&&palabra2[q]<=90)
+	    
+	    {
+	        palabra2[q]=palabra2[q]+32;
+	        
+	        
+	    }
+	    
+	    
+	    
+	    
+	    
+	}
+	
+	
+	ok_chscrb=false;
+	
+	
+	for (int p=0; p<=t1;p++)
+	
+	{
+	    if (palabra1[p]>=65&&palabra1[p]<=90)
+	    
+	    palabra1[p]=palabra1[p] +32;
+	    
+	    
+	    
+	}
+	
+	
+	
+	
+	if (t1!=t2)
+	
+	{
+	    
+	    cout<<"No tienen las mismas letras"<<endl;
+	    
+	}
+	
+	else
+	
+	{
+	    
+	   for (int i=1; i<t1; i++)
+	   
+	   {
+	       for (int j=0 ; j<t1 - 1; j++)
+	       
+	       {
+	          
+	           if (palabra1[j] > palabra1[j+1])
+	           
+	           {
+	               
+	               temp = palabra1[j];
+                    palabra1[j] = palabra1[j+1];
+                    palabra1[j+1] = temp;
+	               
+	               
+	           }
+                    
+	           
+	           
+	           
+	       }
+	       
+            
+	       
+	       
+	   }
+	   
+	   for (int i=1; i<t1; i++)
+	   
+	   {
+	       for (int j=0 ; j<t1 - 1; j++)
+	       
+	       {
+	          
+	           if (palabra2[j] > palabra2[j+1])
+	           
+	           {
+	               
+	               temp = palabra2[j];
+                    palabra2[j] = palabra2[j+1];
+                    palabra2[j+1] = temp;
+	               
+	               
+	           }
+                    
+	           
+	           
+	           
+	       }
+	       
+             
+	       
+	       
+	   }
+	   
+	   
+	   if (palabra1==palabra2)
+	   
+	   {
+	       ok_chscrb=True;
+	   
+	       
+	   }
+	 
+	   
+	    
+	    
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	/*************************************************************/
+	/*Por favor NO borre las lineas de codigo siguientes */	
+	if(ok_chscrb)
+		cout<<"Tienen las mismas letras"<<endl;
+	else
+		cout<<"No tienen las mismas letras"<<endl;	
+}
+
+
+// 3. En la funcion printStruct utilice un puntero a la estructura local_struct, aritmetica de punteros y conversión explícita (type casting) 
+// para imprimir el valor de los miembros de la estructura local declarada en la función.
+// Dato1: NO debe utilizarse el operador punto (.) ni el operador flecha (->) Solo el puntero a local_struct y aritmetica de punteros.
+// Dato2: Para imprimir los valores utilice la función "cout". Ejemplo: cout<<var_x<<endl;
+// Enlaces útiles: http://ecomputernotes.com/what-is-c/function-a-pointer/type-casting-of-pointers 
+//                 https://es.wikibooks.org/wiki/Programaci%C3%B3n_en_C/Punteros
+//                 https://dgvergel.blogspot.com/2015/02/gestion-de-memoria-iii.html
+//                 https://www.taringa.net/+apuntes_y_monografias/c-alineamiento-de-memoria-en-structs-clases_waqeq
+
+
+/*Por favor NO borre las lineas de codigo siguientes que definen la estructura */
+struct Clase
+	{
+		
+		char mem1 = 'D';
+		double mem2 = 12345678987654321.88888888888889;
+		unsigned short mem3 = 4554;
+		float mem4 = 3.14159;
+		long long int mem5 = 5444333222;
+		char mem6 = 'X';
+		int mem7 = 434776;
+		double mem8 = 2.35656778457911;
+	};
+
+void printStruct(void)
+{
+	struct Clase local_struct; /*NO borre esta linea con la declaracion de la estructura local_struct */
+	
+	//De aqui en adelante se debe implementar la lógica en código de C++
+	
+	struct Clase *ptr=&local_struct;
+	
+	cout<<*((char *)ptr)<<endl;
+	cout<<*((char *)ptr+32)<<endl;
+	cout<<*((double *)ptr+1)<<endl;
+	cout<<*((unsigned short *)ptr+8)<<endl;
+	cout<<*((float *)ptr+5)<<endl;
+	cout<<*((long long int *)ptr+3)<<endl;
+	cout<<*((int *)ptr+9)<<endl;
+	cout<<*((double  *)ptr+5)<<endl;
+	
+	}
+
+
+/* NO es necesario que modifique nada de la función main */
+
+int main()
+{
+	//1.
+	string number = "45678945";
+	string numerato = "777000555666999";
+	NumStringToInt(number);
+	NumStringToInt(numerato);
+	cout<<endl;
+	
+	//2. 
+	string pal1 = "Mex1C4l1";
+	string pal2 = "411clEmX";
+	string pw1 = "Lenguajes";
+	string pw2 = "Languages";
+	CheckScrabble (pal1, pal2);
+	CheckScrabble (pw1, pw2);
+	cout<<endl;
+	
+	//3.
+	printStruct();
+}
